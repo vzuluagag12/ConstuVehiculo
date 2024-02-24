@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Vehiculo {
     Scanner entrada = new Scanner(System.in);
-
+    
     String marca;
     int modelo;
     int motor;
