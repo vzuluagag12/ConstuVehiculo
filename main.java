@@ -1,43 +1,44 @@
 package vehiculo;
 
-import vehiculo.Vehiculo.TipoVehiculo;
+import vehiculo.Vehiculo.Tipo;
 import vehiculo.Vehiculo.Color;
-import vehiculo.Vehiculo.TipoCombustible;
+import vehiculo.Vehiculo.Combustible;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Vehiculo miVehiculo = new Vehiculo("Toyota", 2018, 6, 4, 5, 250, Color.NARANJA, TipoVehiculo.SUV, TipoCombustible.GASOLINA);
+        Vehiculo miVehiculo = new Vehiculo("Toyota", 2018, 6, 4, 5, 250, Color.NARANJA, Tipo.SUV, Combustible.GASOLINA);
         miVehiculo.mostrarDetalles();
 
         System.out.println("Velocidad permitida en carretera: 200 km/h");
 
-        miVehiculo.setVelocidadActual(180);
-        System.out.println("\nVelocidad actual = " + miVehiculo.getVelocidadActual());
+        miVehiculo.velocidadActual = 180;
+        System.out.println("\nVelocidad actual = " + miVehiculo.velocidadActual);
 
         miVehiculo.acelerar(60);
-        System.out.println("Acelerando, velocidad actual = " + miVehiculo.getVelocidadActual());
+        System.out.println("Acelerando, velocidad actual = " + miVehiculo.velocidadActual);
 
         miVehiculo.acelerar(60);
-        System.out.println("Acelerando, velocidad actual = " + miVehiculo.getVelocidadActual());
+        System.out.println("Acelerando, velocidad actual = " + miVehiculo.velocidadActual);
 
-        miVehiculo.desacelerar(100);
-        System.out.println("Desacelerando, velocidad actual = " + miVehiculo.getVelocidadActual());
+        miVehiculo.desacelerar(50); // Cambio de 100 a 50
+        System.out.println("Desacelerando, velocidad actual = " + miVehiculo.velocidadActual);
 
         miVehiculo.acelerar(70);
-        System.out.println("Acelerando, velocidad actual = " + miVehiculo.getVelocidadActual());
+        System.out.println("Acelerando, velocidad actual = " + miVehiculo.velocidadActual);
 
-        miVehiculo.desacelerar(100);
-        System.out.println("Desacelerando, velocidad actual = " + miVehiculo.getVelocidadActual());
+        miVehiculo.desacelerar(50); // Cambio de 100 a 50
+        System.out.println("Desacelerando, velocidad actual = " + miVehiculo.velocidadActual);
 
-        miVehiculo.mostrarTiempoLlegada(400);
+        miVehiculo.mostrarTiempoLlegada(800); // Cambio de 400 a 800
 
         miVehiculo.frenar();
-        System.out.println("Frenando, velocidad actual = " + miVehiculo.getVelocidadActual());
+        System.out.println("Frenando, velocidad actual = " + miVehiculo.velocidadActual);
 
         miVehiculo.desacelerar(20);
 
         miVehiculo.mostrarMulta();
     }
 }
+
