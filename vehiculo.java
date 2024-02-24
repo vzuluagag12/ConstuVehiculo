@@ -37,8 +37,6 @@ public class Vehiculo {
         this.combustible = combustible;
     }
 
-    // Getters y setters omitidos por brevedad
-
     void acelerar(int incrementoVelocidad) {
         if (velocidadActual + incrementoVelocidad <= velocidadMaxima && velocidadActual + incrementoVelocidad > 200) {
             velocidadActual += incrementoVelocidad;
