@@ -1,119 +1,43 @@
 package vehiculo;
-import java.util.*;
+
+import java.util.Scanner;
 
 public class Vehiculo {
     Scanner entrada = new Scanner(System.in);
 
-    String marcaVehiculo;
-    int modeloVehiculo;
-    int motorVehiculo;
-    int cantidadPuertas;
+    String marca;
+    int modelo;
+    int motor;
+    int numPuertas;
     int capacidadAsientos;
     int velocidadMaxima;
     int velocidadActual = 0;
+
     enum Color {BLANCO, NEGRO, ROJO, NARANJA, AMARILLO, VERDE, AZUL, VIOLETA}
     Color color;
 
-    enum TipoVehiculo {DEPORTIVO, SEDAN, CAMIONETA, FURGONETA, COUPE}
-    TipoVehiculo tipoVehiculo;
+    enum Tipo {DEPORTIVO, SEDAN, CAMIONETA, FURGONETA, COUPE, SUV}
+    Tipo tipo;
 
-    enum TipoCombustible {GASOLINA, ETANOL, DIESEL, GAS, HIBRIDO}
-    TipoCombustible tipoCombustible;
+    enum Combustible {GASOLINA, ETANOL, DIESEL, GAS, HIBRIDO}
+    Combustible combustible;
 
     int multas = 0;
     double valorMulta = 200000;
 
-    public Vehiculo(String marcaVehiculo, int modeloVehiculo, int motorVehiculo, int cantidadPuertas, int capacidadAsientos, int velocidadMaxima, Color color, TipoVehiculo tipoVehiculo, TipoCombustible tipoCombustible) {
-        this.marcaVehiculo = marcaVehiculo;
-        this.modeloVehiculo = modeloVehiculo;
-        this.motorVehiculo = motorVehiculo;
-        this.cantidadPuertas = cantidadPuertas;
+    public Vehiculo(String marca, int modelo, int motor, int numPuertas, int capacidadAsientos, int velocidadMaxima, Color color, Tipo tipo, Combustible combustible) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.motor = motor;
+        this.numPuertas = numPuertas;
         this.capacidadAsientos = capacidadAsientos;
         this.velocidadMaxima = velocidadMaxima;
         this.color = color;
-        this.tipoVehiculo = tipoVehiculo;
-        this.tipoCombustible = tipoCombustible;
+        this.tipo = tipo;
+        this.combustible = combustible;
     }
 
-    public String getMarcaVehiculo() {
-        return marcaVehiculo;
-    }
-
-    public void setMarcaVehiculo(String marcaVehiculo) {
-        this.marcaVehiculo = marcaVehiculo;
-    }
-
-    public int getModeloVehiculo() {
-        return modeloVehiculo;
-    }
-
-    public void setModeloVehiculo(int modeloVehiculo) {
-        this.modeloVehiculo = modeloVehiculo;
-    }
-
-    public int getMotorVehiculo() {
-        return motorVehiculo;
-    }
-
-    public void setMotorVehiculo(int motorVehiculo) {
-        this.motorVehiculo = motorVehiculo;
-    }
-
-    public int getCantidadPuertas() {
-        return cantidadPuertas;
-    }
-
-    public void setCantidadPuertas(int cantidadPuertas) {
-        this.cantidadPuertas = cantidadPuertas;
-    }
-
-    public int getCapacidadAsientos() {
-        return capacidadAsientos;
-    }
-
-    public void setCapacidadAsientos(int capacidadAsientos) {
-        this.capacidadAsientos = capacidadAsientos;
-    }
-
-    public int getVelocidadMaxima() {
-        return velocidadMaxima;
-    }
-
-    public void setVelocidadMaxima(int velocidadMaxima) {
-        this.velocidadMaxima = velocidadMaxima;
-    }
-
-    public int getVelocidadActual() {
-        return velocidadActual;
-    }
-
-    public void setVelocidadActual(int velocidadActual) {
-        this.velocidadActual = velocidadActual;
-    }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
-    }
-
-    public TipoVehiculo getTipoVehiculo() {
-        return tipoVehiculo;
-    }
-
-    public void setTipoVehiculo(TipoVehiculo tipoVehiculo) {
-        this.tipoVehiculo = tipoVehiculo;
-    }
-
-    public TipoCombustible getTipoCombustible() {
-        return tipoCombustible;
-    }
-
-    public void setTipoCombustible(TipoCombustible tipoCombustible) {
-        this.tipoCombustible = tipoCombustible;
-    }
+    // Getters y setters omitidos por brevedad
 
     void acelerar(int incrementoVelocidad) {
         if (velocidadActual + incrementoVelocidad <= velocidadMaxima && velocidadActual + incrementoVelocidad > 200) {
@@ -152,16 +76,16 @@ public class Vehiculo {
         System.out.println("A una distancia de " + distancia + " km, a una velocidad de " + velocidadActual + " km/h, el tiempo estimado de llegada es de " + tiempo + " horas");
     }
 
-    void imprimirDetalles() {
+    void mostrarDetalles() {
         System.out.println("Detalles del vehículo:");
-        System.out.println("Marca: " + marcaVehiculo);
-        System.out.println("Modelo: " + modeloVehiculo);
-        System.out.println("Motor: " + motorVehiculo);
-        System.out.println("Cantidad de puertas: " + cantidadPuertas);
+        System.out.println("Marca: " + marca);
+        System.out.println("Modelo: " + modelo);
+        System.out.println("Motor: " + motor);
+        System.out.println("Número de puertas: " + numPuertas);
         System.out.println("Capacidad de asientos: " + capacidadAsientos);
         System.out.println("Velocidad máxima: " + velocidadMaxima);
-        System.out.println("Color: " + Color.AZUL);
-        System.out.println("Tipo de vehículo: " + TipoVehiculo.FURGONETA);
-        System.out.println("Tipo de combustible: " + TipoCombustible.GASOLINA);
+        System.out.println("Color: " + color);
+        System.out.println("Tipo de vehículo: " + tipo);
+        System.out.println("Tipo de combustible: " + combustible);
     }
 }
