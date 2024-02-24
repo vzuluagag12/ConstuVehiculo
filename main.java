@@ -22,16 +22,16 @@ public class Main {
         miVehiculo.acelerar(60);
         System.out.println("Acelerando, velocidad actual = " + miVehiculo.velocidadActual);
 
-        miVehiculo.desacelerar(50); // Cambio de 100 a 50
+        miVehiculo.desacelerar(50); 
         System.out.println("Desacelerando, velocidad actual = " + miVehiculo.velocidadActual);
 
         miVehiculo.acelerar(70);
         System.out.println("Acelerando, velocidad actual = " + miVehiculo.velocidadActual);
 
-        miVehiculo.desacelerar(50); // Cambio de 100 a 50
+        miVehiculo.desacelerar(50);
         System.out.println("Desacelerando, velocidad actual = " + miVehiculo.velocidadActual);
 
-        miVehiculo.mostrarTiempoLlegada(800); // Cambio de 400 a 800
+        miVehiculo.mostrarTiempoLlegada(800);
 
         miVehiculo.frenar();
         System.out.println("Frenando, velocidad actual = " + miVehiculo.velocidadActual);
